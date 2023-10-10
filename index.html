@@ -105,6 +105,16 @@
     })
 
     gift.addEventListener('click', function(){
+      let giftBox = document.createElement("div");
+      img.appendChild(giftBox)
+      giftBox.style.width = "50vw"
+      giftBox.style.height = "50vh"
+      giftBox.style.backgroundImage = "url(./image/gift.jpeg)"
+      giftBox.style.position = "absolute"
+      giftBox.style.backgroundRepeat = "no-repeat"
+      giftBox.style.backgroundSize = "contain"
+
+      img.remove()
 
     })
 
