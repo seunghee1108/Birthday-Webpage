@@ -29,7 +29,7 @@
     /* menu box */
     #root>div:nth-child(2){
       width: 70vw;
-      height: 10vh;
+      height: 5vh;
       display: flex;
       flex-direction: row;
       justify-content: center;
@@ -76,7 +76,8 @@
     const camera = root.children[1].children[2];
     const hbd = root.children[1].children[3];
     const img = root.children[2];
-    // var audio = new Audio("bgm.mp3")
+
+    var audio = new Audio("bgm.mp3");
 
     letter.addEventListener('click', 
     function(){
@@ -84,23 +85,23 @@
       img.appendChild(letterBox)
       letterBox.style.width = "50vw"
       letterBox.style.height = "50vh"
-      letterBox.style.backgroundImage = "url(./image/letter.png)"
+      letterBox.style.backgroundImage = "url(./image/letter2.jpeg)"
       letterBox.style.backgroundRepeat = "no-repeat"
       letterBox.style.backgroundSize = "cover"
       letterBox.style.position = "absolute"
     })
 
-
-    
     hbd.addEventListener('click', function(){
       let hbdBox = document.createElement("div");
       img.appendChild(hbdBox)
       hbdBox.style.width = "50vw"
-      hbdBox.style.height = "50vw"
+      hbdBox.style.height = "50vh"
       hbdBox.style.backgroundImage = "url(./image/cake.jpeg)"
       hbdBox.style.backgroundRepeat = "no-repeat"
       hbdBox.style.backgroundSize = "cover"
       hbdBox.style.position = "absolute"
+
+      audio.play();
     })
 
 
