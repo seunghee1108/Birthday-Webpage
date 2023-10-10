@@ -18,6 +18,7 @@
       flex-direction: column;
       align-items: center;
     }
+    /* 케이크 움짤 */
     #root>div:nth-child(1){
       width: 30vw;
       height: 40vh;
@@ -25,6 +26,7 @@
       background-size: contain;
       background-repeat: no-repeat;
     }
+    /* menu box */
     #root>div:nth-child(2){
       width: 70vw;
       height: 10vh;
@@ -35,20 +37,25 @@
       position: relative;
       top: -50px;
     }
+    /* GIFI, LETTER, CAMERA, HBD */
     #root>div:nth-child(2) div{
       margin: 100px;
       font-weight: bold;
       font-size: 20px;
     }
+    /* 미달이 사진 */
     #root>div:nth-child(3){
-      width: 50vw;
-      height: 40vh;
+      display: flex;
+      position: relative;
+      background-size: cover;
+      background-repeat: no-repeat;
     }
+  
   </style>
 </head>
 <body>
   <div id="root">
-    <!-- header 케이크 움짤 -->
+    <!-- 케이크 움짤 -->
     <div></div>
     <!-- menu -->
     <div>
@@ -57,20 +64,51 @@
       <div>CAMERA</div>
       <div>HBD</div>
     </div>
-    <!-- footer -->
-    <img src = "image/zz.jpeg" style = "width: 50vw; height: 40vh; "></div>
+    <!-- 미달이 사진 -->
+    <div><img src= zz.jpeg alt="image" style="width: 50vw;height: 50vh;"></div>
   </div>
 
   <script> 
     const root = document.getElementById("root")
     console.dir(root)
-    const gift = document.getElementById("gift")
-    const letter = document.getElementById("letter")
-    const camera = document.getElementById("camera")
-    const hbd = document.getElementById("hbd")
-    var audio = new Audio("bgm.mp3")
+    const gift = root.children[1].children[0];
+    const letter = root.children[1].children[1];
+    const camera = root.children[1].children[2];
+    const hbd = root.children[1].children[3];
+    const img = root.children[2];
+    // var audio = new Audio("bgm.mp3")
+
+    letter.addEventListener('click', 
+    function(){
+      let letterBox = document.createElement("div");
+      img.appendChild(letterBox)
+      letterBox.style.width = "50vw"
+      letterBox.style.height = "50vh"
+      letterBox.style.backgroundImage = "url(./image/letter.png)"
+      letterBox.style.backgroundRepeat = "no-repeat"
+      letterBox.style.backgroundSize = "cover"
+      letterBox.style.position = "absolute"
+    })
+
+    hbd.addEventListener('click', function(){
+      let hbdBox = document.createElement("div");
+      img.appendChild(hbdBox)
+      hbdBox.style.width = "50vw"
+      hbdBox.style.height = "50vw"
+      hbdBox.style.backgroundImage = "url(./image/cake.jpeg)"
+      hbdBox.style.backgroundRepeat = "no-repeat"
+      hbdBox.style.backgroundSize = "cover"
+      hbdBox.style.position = "absolute"
+    })
+
+
+    gift.addEventListener('click', function(){
+
+    })
+
+
     
-    // <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="175" style="width:100%;max-width:660px;overflow:hidden;border-radius:10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/tr/album/%EC%83%9D%EC%9D%BC%EC%B6%95%ED%95%98%EA%B3%A1-dance-version/1539159610?i=1539159616"></iframe>
+  
   </script>
 </body>
 </html>
